@@ -1,0 +1,1 @@
+ChatGpt project for Gnosis Chain
