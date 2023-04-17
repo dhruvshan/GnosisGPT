@@ -1,0 +1,7 @@
+Flask
+Gunicorn
+openai
+python-dotenv
+google-auth-oauthlib
+llama-index
+python-decouple
