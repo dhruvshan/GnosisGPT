@@ -1,6 +1,6 @@
 import os
 import pickle
-import json
+# import json
 from decouple import config
 # from openai.error import RateLimitError
 from flask import Flask, render_template, request, jsonify
@@ -40,7 +40,18 @@ def ask_gpt():
     # initialize LlamaIndex google doc reader 
     GoogleDocsReader = download_loader('GoogleDocsReader')
     # list of google docs we want to index 
-    gdoc_ids = ['1fbb9NL0DJLVndUDt_BvSW-KjcUB_-8oDdh_P4iCG9Zs','1S7lV-zazbKq5L_Imvb-Sb84xR-nxm3D-qmL35NTtiwY','16a30HSlfqauyTOnf0twp2NGroSH8pNVpvnTJ134b59c','1gxC0aMLqukr_p7S3ddW_ILc6-mDC7hhg-pMv7NNxdHw', '1M4LbgIbpxEWu5uFivebsyZc6y56wDGdJBBIJxS8qNuw']
+    gdoc_ids = [
+        '1ku46TShS33j8-I6-Yp1mnnXC8jEchPSa3AymNQMFQiQ'
+        '16V_vp4VONvhjgYA1zyI8TKQyywyKu4YfiRMX8fZaCTg'
+        '1ZDAH7qt0MLZIjUA7MB4dBhsv64V6KSu0MBHMpg9H7xM'
+        '1dCAjbWkVFKXMrE0VTyIXFqdyDiCr5vNexPHXLLPiUnE'
+        '1cnOPHaLTrdzy6Rvu0dXg1VBwqkxph6Tx1hggio26DOM'
+        '13HJhQeh9WAjIBNp76zgt23oSOLBTVeIPlx4nyt0-SAY',
+        '1fbb9NL0DJLVndUDt_BvSW-KjcUB_-8oDdh_P4iCG9Zs',
+        '1S7lV-zazbKq5L_Imvb-Sb84xR-nxm3D-qmL35NTtiwY',
+        '16a30HSlfqauyTOnf0twp2NGroSH8pNVpvnTJ134b59c',
+        '1gxC0aMLqukr_p7S3ddW_ILc6-mDC7hhg-pMv7NNxdHw', 
+        '1M4LbgIbpxEWu5uFivebsyZc6y56wDGdJBBIJxS8qNuw']
     loader = GoogleDocsReader()
     # load gdocs and index them 
     documents = loader.load_data(document_ids=gdoc_ids)
